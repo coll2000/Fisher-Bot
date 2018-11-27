@@ -13,7 +13,7 @@ import java.util.concurrent.Callable;
 @Script.Manifest(name = "Fisher // LiL PROMETHAZiNE", description = "Fish", properties = "author=COVENS; topic=999; client=4;")
 public class Fisher extends PollingScript<ClientContext> {
 
-    final static int maxInventorySpace = 28;
+    final static int MAX_SPACE = 28;
     //constant value which represents maximum inventory space
 
     final static int FISHING_SPOT = 1525; //ID for the fishing spot (Draynor)
@@ -74,7 +74,7 @@ public class Fisher extends PollingScript<ClientContext> {
 
         if (animation == -1) {
             smallNetFish();
-            if(ctx.inventory.count() == maxInventorySpace){
+            if(ctx.inventory.count() == MAX_SPACE){
                 fishes.interact("Drop");
             }
         }
